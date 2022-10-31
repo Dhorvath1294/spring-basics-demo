@@ -8,5 +8,4 @@ import com.example.demo.entity.DemoEntity;
 
 @Repository
 public interface DemoRepository extends PagingAndSortingRepository<DemoEntity, Integer> {
-
 }

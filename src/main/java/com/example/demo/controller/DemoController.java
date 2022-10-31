@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +23,16 @@ public class DemoController {
         return ResponseEntity.ok("Demo endpoint called.");
     }
 
-    @PostMapping(path = "/demo/insert")
+    @PostMapping(path = "/insert")
     public ResponseEntity<DemoEntity> insert(@RequestParam String name){
         DemoEntity demoEntity = demoService.insertDemoEntity(name);
         return ResponseEntity.ok(demoEntity);
+    }
+
+    @GetMapping(path = "/findall")
+    public ResponseEntity<List<DemoEntity>> findAll(){
+        List<DemoEntity> entities = demoService.findAllDemoEntities();
+        return ResponseEntity.ok(entities);
     }
 
 }

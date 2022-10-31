@@ -14,6 +14,10 @@ public class DemoEntity {
     private int identity;
     private String name;
 
+    // This default constructor is needed for the findAll repository method
+    public DemoEntity() {
+    }
+
     public DemoEntity(String name) {
         this.name = name;
     }
